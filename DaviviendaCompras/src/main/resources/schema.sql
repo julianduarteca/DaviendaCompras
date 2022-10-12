@@ -1,0 +1,47 @@
+DROP TABLE IF EXISTS CLIENTE;
+DROP TABLE IF EXISTS COMPRA;
+DROP TABLE IF EXISTS CONSIGNACION;
+DROP TABLE IF EXISTS CUENTA;
+DROP TABLE IF EXISTS PRODUCTOS;
+
+
+
+
+
+CREATE TABLE CLIENTE (
+    cedula INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(250),
+    n_cuenta INT
+);
+
+CREATE TABLE COMPRA (
+    id_compra INT AUTO_INCREMENT PRIMARY KEY,
+    id_producto INT,
+    n_cuenta INT,
+    cedula INT,
+    costo_compra INT,
+    hora CURRENT_TIMESTAMP
+);
+
+CREATE TABLE CONSIGNACION (
+    id_consignacion INT AUTO_INCREMENT PRIMARY KEY,
+    cedula INT,
+    n_cuenta INT,
+    valor_consignacion INT
+);
+
+
+CREATE TABLE CUENTA (
+    n_cuenta INT AUTO_INCREMENT PRIMARY KEY,
+    cupo INT,
+    movimientos VARCHAR(1000)
+);
+
+
+CREATE TABLE PRODUCTOS (
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    decripcion VARCHAR(250),
+    valor_producto INT,
+    imagen_producto VARCHAR(1000)
+
+);
