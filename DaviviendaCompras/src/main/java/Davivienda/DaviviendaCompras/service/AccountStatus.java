@@ -1,19 +1,9 @@
 package Davivienda.DaviviendaCompras.service;
 import Davivienda.DaviviendaCompras.entity.Cliente;
+import Davivienda.DaviviendaCompras.entity.Cuenta;
 
 public interface AccountStatus {
     Cliente obtenerClient(Long cedula);
 
-
-
-
-
-
-
-
-
-
-//    long obtenerCuentaCliente(Long cedula);
-
-//  #  Optional<Cuenta> obtenerCuenta(Long n_cuenta);
+    Cuenta obtenerCuenta(Long n_cuenta);
 }
