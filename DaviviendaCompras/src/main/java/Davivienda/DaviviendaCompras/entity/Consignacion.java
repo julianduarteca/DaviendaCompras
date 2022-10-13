@@ -17,15 +17,7 @@ public class Consignacion {
     private long n_cuenta;
     private long valor_consignacion;
 
-    public Consignacion() {
-    }
 
-    public Consignacion(long id_consignacion, long cedula, long n_cuenta, long valor_consignacion) {
-        this.id_consignacion = id_consignacion;
-        this.cedula = cedula;
-        this.n_cuenta = n_cuenta;
-        this.valor_consignacion = valor_consignacion;
-    }
 
     public long getId_consignacion() {
         return id_consignacion;
