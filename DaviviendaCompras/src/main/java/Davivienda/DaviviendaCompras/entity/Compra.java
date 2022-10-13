@@ -1,7 +1,11 @@
 package Davivienda.DaviviendaCompras.entity;
 
 
+import lombok.Getter;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +13,8 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-
+@Getter
+@Builder
 public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,13 +23,13 @@ public class Compra {
     private int n_cuenta;
     private int cedula;
     private int costo_compra;
-    private date hora;
+    private String hora;
 
     public Compra(){
 
     }
 
-    public Compra(int id_compra, int id_producto, int n_cuenta, int cedula, int costo_compra, date hora) {
+    public Compra(int id_compra, int id_producto, int n_cuenta, int cedula, int costo_compra, String hora) {
         this.id_compra = id_compra;
         this.id_producto = id_producto;
         this.n_cuenta = n_cuenta;
@@ -73,11 +78,11 @@ public class Compra {
         this.costo_compra = costo_compra;
     }
 
-    public date getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(date hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
