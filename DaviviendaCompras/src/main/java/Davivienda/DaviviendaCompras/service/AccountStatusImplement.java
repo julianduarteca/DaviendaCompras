@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @Service
-public class AccountStatusImplement implements AccountStatus{
+public class AccountStatusImplement implements AccountStatusService {
     @Autowired
     private final ClientRepository clientRepository;
     @Autowired
@@ -28,8 +28,5 @@ public class AccountStatusImplement implements AccountStatus{
         return accountRepository.findById(n_cuenta).orElseThrow(() -> {throw new RuntimeException();});
     }
 
-    @Override
-    public Cuenta obtenerCuentaClient(Cliente cliente){
-        return accountRepository.findById(cliente.getCedula()).get();
-    }
+
 }
