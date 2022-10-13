@@ -8,55 +8,54 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-
+@Table
 public class Consignacion {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_consignacion;
-    private int cedula;
-    private int n_cuenta;
-    private int valor_consignacion;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private long id_consignacion;
+    private long cedula;
+    private long n_cuenta;
+    private long valor_consignacion;
 
-    private Consignacion(){
-
+    public Consignacion() {
     }
 
-    public Consignacion(int id_consignacion, int cedula, int n_cuenta, int valor_consignacion) {
+    public Consignacion(long id_consignacion, long cedula, long n_cuenta, long valor_consignacion) {
         this.id_consignacion = id_consignacion;
         this.cedula = cedula;
         this.n_cuenta = n_cuenta;
         this.valor_consignacion = valor_consignacion;
     }
 
-    public int getId_consignacion() {
+    public long getId_consignacion() {
         return id_consignacion;
     }
 
-    public void setId_consignacion(int id_consignacion) {
+    public void setId_consignacion(long id_consignacion) {
         this.id_consignacion = id_consignacion;
     }
 
-    public int getCedula() {
+    public long getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(long cedula) {
         this.cedula = cedula;
     }
 
-    public int getN_cuenta() {
+    public long getN_cuenta() {
         return n_cuenta;
     }
 
-    public void setN_cuenta(int n_cuenta) {
+    public void setN_cuenta(long n_cuenta) {
         this.n_cuenta = n_cuenta;
     }
 
-    public int getValor_consignacion() {
+    public long getValor_consignacion() {
         return valor_consignacion;
     }
 
-    public void setValor_consignacion(int valor_consignacion) {
+    public void setValor_consignacion(long valor_consignacion) {
         this.valor_consignacion = valor_consignacion;
     }
 
@@ -72,7 +71,7 @@ public class Consignacion {
 
     @Override
     public int hashCode() {
-        return id_consignacion;
+        return (int) (id_consignacion ^ (id_consignacion >>> 32));
     }
 
     @Override
